@@ -41,7 +41,7 @@ app.use((req, res, next) => {
     
     return next();
 });
-app.use(cors({origin: 'https://sports-events-app.herokuapp.com/'}));
+app.use(cors({origin: '*'}));
 app.use(express.json());
 app.use('/files', express.static(path.join(__dirname, '..', 'files')));
 app.use(routes);
