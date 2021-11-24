@@ -9,7 +9,12 @@ const routes = require('./routes');
 
 const app = express();
 const server = http.Server(app);
-const io = socketio(server, {origins: '*:*'});
+const io = socketio(server, {
+    cors: {
+        origin: "*",
+        methods: '*'
+    }
+});
 
 const PORT = process.env.PORT || 8000;
 
