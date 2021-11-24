@@ -9,7 +9,7 @@ const routes = require('./routes');
 
 const app = express();
 const server = http.Server(app);
-const io = socketio(server);
+const io = socketio(server, {origins: '*:*'});
 
 const PORT = process.env.PORT || 8000;
 
