@@ -12,7 +12,8 @@ const server = http.Server(app);
 const io = socketio(server, {
     cors: {
         origin: "*",
-        methods: '*'
+        methods: '*',
+        credentials: true
     }
 });
 
