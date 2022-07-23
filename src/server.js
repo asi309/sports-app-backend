@@ -14,7 +14,6 @@ const io = new Server(server, {
         origin: "*",
         methods: '*',
         allowedHeaders: '*',
-        credentials: true
     }
 });
 
