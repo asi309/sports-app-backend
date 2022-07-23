@@ -3,13 +3,13 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const path = require('path');
 const http = require('http');
-const socketio = require('socket.io');
+const { Server } = require('socket.io');
 
 const routes = require('./routes');
 
 const app = express();
-const server = http.Server(app);
-const io = socketio(server, {
+const server = http.createServer(app);
+const io = new Server(server, {
     cors: {
         origin: "*",
         methods: '*',
